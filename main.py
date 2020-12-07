@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-token = os.getenv("TOKEN")
+BITLY_TOKEN = os.getenv("TOKEN")
 
 
 def shorten_link(token, url):
