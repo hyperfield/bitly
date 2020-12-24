@@ -5,10 +5,6 @@ from urllib.parse import urlparse
 import pprint
 from dotenv import load_dotenv
 
-load_dotenv()
-
-BITLY_TOKEN = os.getenv("TOKEN")
-
 
 def shorten_link(token, url):
     api_url = "https://api-ssl.bitly.com/v4/shorten"
@@ -22,16 +18,22 @@ def shorten_link(token, url):
 def count_clicks(token, link):
     parsed = urlparse(link)
     url = parsed.netloc + parsed.path
+    bitly_api_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url}"
     headers = {"Authorization": "Bearer {token}".format(token=token),
                "unit": "day", "units": "-1"}
-    clicks_count_url = "https://api-ssl.bitly.com/v4/bitlinks/" \
-        + "{url}/clicks/summary".format(url=url)
+    clicks_count_url = f"{bitly_api_url}/clicks/summary"
     clicks_count = requests.get(clicks_count_url, headers=headers)
     clicks_count.raise_for_status()
     return clicks_count.json()
 
 
 def main():
+
+    load_dotenv()
+
+    token = os.getenv("TOKEN")
+
+    # sys.argv is a list of command line arguments
     if not sys.argv[1].startswith("https://bit.ly"):
         bitlink = None
         try:
