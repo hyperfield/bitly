@@ -27,6 +27,19 @@ def count_clicks(token, link):
     return clicks_count.json()
 
 
+def exist_bitly(token, link):
+    parsed = urlparse(link)
+    url = parsed.netloc + parsed.path
+    bitly_api_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url}"
+    headers = {"Authorization": "Bearer {token}".format(token=token)}
+    response = requests.get(bitly_api_url, headers=headers)
+    try:
+        response.raise_for_status()
+        return True
+    except Exception:
+        return False
+
+
 def main():
 
     load_dotenv()
@@ -34,7 +47,7 @@ def main():
     token = os.getenv("TOKEN")
 
     # sys.argv is a list of command line arguments
-    if not sys.argv[1].startswith("https://bit.ly"):
+    if exist_bitly(sys.argv[1]):
         bitlink = None
         try:
             bitlink = shorten_link(token, sys.argv[1])
