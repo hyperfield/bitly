@@ -4,6 +4,14 @@ import requests
 from urllib.parse import urlparse
 import pprint
 from dotenv import load_dotenv
+import argparse
+
+
+def createParser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('url', help="Type your URL as the argument")
+
+    return parser
 
 
 def shorten_link(token, url):
@@ -43,15 +51,18 @@ def main():
 
     token = os.getenv("TOKEN")
 
-    if not exist_bitly(token, sys.argv[1]):
+    parser = createParser()
+    namespace = parser.parse_args()
+
+    if not exist_bitly(token, namespace.url):
         try:
-            bitlink = shorten_link(token, sys.argv[1])
+            bitlink = shorten_link(token, namespace.url)
             print("Битлинк {link}".format(link=bitlink))
         except requests.exceptions.HTTPError as error:
             print("Ошибка: {error}".format(error=error))
     else:
         try:
-            clicks_count = count_clicks(token, sys.argv[1])
+            clicks_count = count_clicks(token, namespace.url)
             pprint.pprint(clicks_count)
         except requests.exceptions.HTTPError as error:
             print("Ошибка: {error}".format(error=error))
