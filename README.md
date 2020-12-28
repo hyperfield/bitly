@@ -8,14 +8,14 @@
 
 You need Python 3 to execute this script. If Python 3 is not yet installed then download it from http://www.python.org for your operating system and install. Once you have Python on your system, run the following commands:
 
-`python3 -m venv bitly-env` to create a new virtual environment in the directory `bitly-env`  
-`source bitly-env/bin/activate`  
-`pip3 install -r requirements.txt`  
+```python3 -m venv bitly-env``` to create a new virtual environment in the directory `bitly-env`  
+```source bitly-env/bin/activate```  
+```pip3 install -r requirements.txt```  
 
 ### How to launch
 
 If the *Bitly: links and clicks* virtual environment is not yet active, run
-`source bitly-env/bin/activate`. Use `deactivate` to exit the virtual environment.
+```source bitly-env/bin/activate```. Use ```deactivate``` to exit the virtual environment.
 
 `python3 main.py {url}`, where `{url}` is any Web link for which you would like to get a short link from bit.ly or is a Bitly (default or custom) link if you want to see the click statistics on the link.
 
@@ -27,9 +27,9 @@ After this you will be able to execute the script by typing `./main.py` in your 
 
 ### Examples
 
-`python3 main.py https://bit.ly/2M7ilwV`
-`python3 main.py https://python.org`
-`python3 main.py https://ibm.co/3kNB1gY`
+    python3 main.py https://bit.ly/2M7ilwV    
+    python3 main.py https://python.org  
+    python3 main.py https://ibm.co/3kNB1gY
 
 ### Environment variables
 
