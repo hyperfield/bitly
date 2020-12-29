@@ -35,7 +35,7 @@ After this you will be able to execute the script by typing `./main.py` in your 
 
 There is only one environment variable, which is contained in the `.env` file:
 
-`TOKEN`
+`BITLY_TOKEN`
 
 It stores the bit.ly token to use by *Bitly: links and clicks* to talk to the bit.ly API. If you don't yet have your own token, you can get it by registering on bit.ly.
 

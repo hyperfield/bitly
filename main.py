@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import argparse
 
 
-def createParser():
+def create_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('url', help="Type your URL as the argument")
 
@@ -48,20 +48,20 @@ def main():
 
     load_dotenv()
 
-    token = os.getenv("TOKEN")
+    token = os.getenv("BITLY_TOKEN")
 
-    parser = createParser()
-    namespace = parser.parse_args()
+    parser = create_parser()
+    args = parser.parse_args()
 
-    if not exist_bitly(token, namespace.url):
+    if not exist_bitly(token, args.url):
         try:
-            bitlink = shorten_link(token, namespace.url)
+            bitlink = shorten_link(token, args.url)
             print("Битлинк {link}".format(link=bitlink))
         except requests.exceptions.HTTPError as error:
             print("Ошибка: {error}".format(error=error))
     else:
         try:
-            clicks_count = count_clicks(token, namespace.url)
+            clicks_count = count_clicks(token, args.url)
             pprint.pprint(clicks_count)
         except requests.exceptions.HTTPError as error:
             print("Ошибка: {error}".format(error=error))
