@@ -24,7 +24,7 @@ def shorten_link(token, url):
 
 def count_clicks(token, link):
     parsed = urlparse(link)
-    url = parsed.netloc + parsed.path
+    url = f"{parsed.netloc}{parsed.path}"
     bitly_api_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url}"
     headers = {"Authorization": "Bearer {token}".format(token=token)}
     payload = {"unit": "day", "units": "-1"}

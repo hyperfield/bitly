@@ -9,8 +9,8 @@
 You need Python 3 to execute this script. If Python 3 is not yet installed then download it from http://www.python.org for your operating system and install. Once you have Python on your system, run the following commands:
 
 ```python3 -m venv bitly-env``` to create a new virtual environment in the directory `bitly-env`  
-```source bitly-env/bin/activate```  
-```pip3 install -r requirements.txt```  
+```source bitly-env/bin/activate``` to activate the virtual environment
+```pip3 install -r requirements.txt``` to install the required dependencies
 
 ### How to launch
 
@@ -37,8 +37,8 @@ There is only one environment variable, which is contained in the `.env` file:
 
 `BITLY_TOKEN`
 
-It stores the bit.ly token to use by *Bitly: links and clicks* to talk to the bit.ly API. If you don't yet have your own token, you can get it by registering on bit.ly.
+It stores the bit.ly token to use by *Bitly: links and clicks* to talk to the bit.ly API. If you don't yet have your own token, you can get it by registering on [bit.ly](http://bit.ly).
 
 ### Project Goals
 
-The code is written for educational purposes on online-course for web-developers dvmn.org.
+The code is written for educational purposes on online-course for web-developers [dvmn.org](http://dvmn.org).
