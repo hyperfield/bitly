@@ -8,9 +8,15 @@
 
 You need Python 3 to execute this script. If Python 3 is not yet installed then download it from http://www.python.org for your operating system and install. Once you have Python on your system, run the following commands:
 
-```python3 -m venv bitly-env``` to create a new virtual environment in the directory `bitly-env`  
-```source bitly-env/bin/activate``` to activate the virtual environment
-```pip3 install -r requirements.txt``` to install the required dependencies
+```
+python3 -m venv bitly-env
+```
+to create a new virtual environment in the directory `bitly-env`;
+```
+source bitly-env/bin/activate
+```
+to activate the virtual environment
+```pip3 install -r requirements.txt``` to install the required dependencies.
 
 ### How to launch
 

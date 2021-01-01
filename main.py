@@ -37,7 +37,7 @@ def count_clicks(token, link):
 
 def exist_bitly(token, link):
     parsed = urlparse(link)
-    url = parsed.netloc + parsed.path
+    url = f"{parsed.netloc}{parsed.path}"
     bitly_api_url = f"https://api-ssl.bitly.com/v4/bitlinks/{url}"
     headers = {"Authorization": "Bearer {token}".format(token=token)}
     response = requests.get(bitly_api_url, headers=headers)
