@@ -16,12 +16,23 @@ to create a new virtual environment in the directory `bitly-env`;
 source bitly-env/bin/activate
 ```
 to activate the virtual environment
-```pip3 install -r requirements.txt``` to install the required dependencies.
+```
+pip3 install -r requirements.txt
+```
+to install the required dependencies.
 
 ### How to launch
 
 If the *Bitly: links and clicks* virtual environment is not yet active, run
-```source bitly-env/bin/activate```. Use ```deactivate``` to exit the virtual environment.
+```
+source bitly-env/bin/activate
+```
+
+Use
+```
+deactivate
+```
+to exit the virtual environment.
 
 `python3 main.py {url}`, where `{url}` is any Web link for which you would like to get a short link from bit.ly or is a Bitly (default or custom) link if you want to see the click statistics on the link.
 
