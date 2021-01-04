@@ -34,7 +34,10 @@ deactivate
 ```
 to exit the virtual environment.
 
-`python3 main.py {url}`, where `{url}` is any Web link for which you would like to get a short link from bit.ly or is a Bitly (default or custom) link if you want to see the click statistics on the link.
+```
+python3 main.py {url}
+```
+where `{url}` is any Web link for which you would like to get a short link from bit.ly or is a Bitly (default or custom) link if you want to see the click statistics on the link.
 
 If you use a *nix-based operating system, you can do the following in your terminal:
 
