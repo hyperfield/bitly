@@ -58,7 +58,3 @@ There is only one environment variable, which is contained in the `.env` file:
 `BITLY_TOKEN`
 
 It stores the bit.ly token to use by *Bitly: links and clicks* to talk to the bit.ly API. If you don't yet have your own token, you can get it by registering on [bit.ly](http://bit.ly).
-
-### Project Goals
-
-The code is written for educational purposes on online-course for web-developers [dvmn.org](http://dvmn.org).
